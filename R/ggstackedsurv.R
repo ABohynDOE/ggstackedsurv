@@ -28,41 +28,9 @@ ggstackedsurv <- function(
     cli::cli_abort("Stratified {.cls survfit} objects are not yet supported.")
   }
 
-  time <- x$time
-  pstate <- x$pstate
-  # Start the curves at time 0, when every subject is in the initial state.
-  if (time[1] > 0) {
-    time <- c(0, time)
-    pstate <- rbind(c(1, numeric(ncol(pstate) - 1)), pstate)
-  }
-  # The initial state is the base (no event yet) level.
-  colnames(pstate) <- c(base_state, x$states[-1])
-
-  event_of_interest <- x$states[2]
-  other_states <- setdiff(colnames(pstate)[-1], event_of_interest)
-  # Time of first occupancy; states never occupied sort as latest.
-  first_event <- vapply(
-    other_states,
-    function(s) {
-      i <- which(pstate[, s] > 0)
-      if (length(i)) time[i[1]] else Inf
-    },
-    numeric(1)
-  )
-  state_levels <- c(
-    other_states[order(first_event, decreasing = TRUE)],
-    base_state,
-    event_of_interest
-  )
-
-  probs_long <- data.frame(
-    x = rep(time, times = ncol(pstate)),
-    y = as.vector(pstate),
-    state = factor(
-      rep(colnames(pstate), each = length(time)),
-      levels = state_levels
-    )
-  )
+  tidy <- .tidy_msurv(x, base_state = base_state)
+  time <- unique(tidy$time)
+  probs_long <- data.frame(x = tidy$time, y = tidy$prob, state = tidy$state)
 
   # Step each state separately so the curves hold until the next time.
   probs_step <- ggplot2:::dapply(probs_long, "state", ggplot2:::stairstep)
@@ -74,7 +42,11 @@ ggstackedsurv <- function(
     theme
 
   # Keep the fit so add_risktable() can compute table values from it.
-  attr(p, "ggstackedsurv") <- list(survfit = x, states = colnames(pstate))
+  attr(p, "ggstackedsurv") <- list(
+    survfit = x,
+    states = c(base_state, x$states[-1]),
+    base_state = base_state
+  )
   class(p) <- c("ggstackedsurv", class(p))
   p
 }

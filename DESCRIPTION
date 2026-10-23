@@ -11,8 +11,14 @@ RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
 LazyData: true
-Imports: 
+Imports:
     cli,
     ggplot2,
-    ggsurvfit,
+    glue,
+    grid,
     patchwork
+Suggests:
+    survival,
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
