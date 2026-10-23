@@ -1,11 +1,10 @@
 Package: ggstackedsurv
-Title: What the Package Does (One Line, Title Case)
+Title: Stacked Probability Plots for Mutli-State Survival Models
 Version: 0.0.0.9000
 Authors@R: 
     person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: Facilitate the creation of stacked probabity plots for multi-state survival models with `ggplot2`. Each function from the package creates a proper `ggplot2` object that can be modified with any function from the `ggplot2` or any of its extensions.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
