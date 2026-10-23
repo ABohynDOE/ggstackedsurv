@@ -1,0 +1,187 @@
+id,time,status
+1,14,Died
+2,8,In ICU and weaned off ECMO
+2,41,Alive and out of ICU
+2,90,censored
+3,10,In ICU and weaned off ECMO
+3,83,Alive and out of ICU
+3,90,censored
+4,17,In ICU and weaned off ECMO
+4,55,Alive and out of ICU
+4,75,censored
+5,58,In ICU and weaned off ECMO
+5,73,censored
+6,38,In ICU and weaned off ECMO
+6,64,Alive and out of ICU
+6,90,censored
+7,21,In ICU and weaned off ECMO
+7,48,Alive and out of ICU
+7,90,censored
+8,9,In ICU and weaned off ECMO
+8,35,Alive and out of ICU
+8,88,censored
+9,48,In ICU and weaned off ECMO
+9,71,Alive and out of ICU
+9,90,censored
+10,13,In ICU and weaned off ECMO
+10,25,Alive and out of ICU
+10,66,censored
+11,20,In ICU and weaned off ECMO
+11,63,Alive and out of ICU
+11,90,censored
+12,14,In ICU and weaned off ECMO
+12,21,Alive and out of ICU
+12,90,censored
+13,32,In ICU and weaned off ECMO
+13,69,Alive and out of ICU
+13,90,censored
+14,19,In ICU and weaned off ECMO
+14,41,Alive and out of ICU
+14,90,censored
+15,9,In ICU and weaned off ECMO
+15,90,censored
+16,70,Died
+17,52,In ICU and weaned off ECMO
+17,74,Alive and out of ICU
+17,90,censored
+18,62,In ICU and weaned off ECMO
+18,85,Alive and out of ICU
+18,90,censored
+19,20,In ICU and weaned off ECMO
+19,43,Alive and out of ICU
+19,90,censored
+20,2,In ICU and weaned off ECMO
+20,22,Alive and out of ICU
+20,90,censored
+21,3,Died
+22,6,In ICU and weaned off ECMO
+22,17,Alive and out of ICU
+22,90,censored
+23,10,In ICU and weaned off ECMO
+23,75,Alive and out of ICU
+23,90,censored
+24,8,In ICU and weaned off ECMO
+24,26,Alive and out of ICU
+24,90,censored
+25,30,Died
+26,8,In ICU and weaned off ECMO
+26,50,Alive and out of ICU
+26,90,censored
+27,11,In ICU and weaned off ECMO
+27,16,Alive and out of ICU
+27,90,censored
+28,41,Died
+29,10,In ICU and weaned off ECMO
+29,52,Alive and out of ICU
+29,90,censored
+30,18,In ICU and weaned off ECMO
+30,29,Alive and out of ICU
+30,90,censored
+31,30,In ICU and weaned off ECMO
+31,46,Alive and out of ICU
+31,90,censored
+32,66,Died
+33,20,In ICU and weaned off ECMO
+33,28,Alive and out of ICU
+33,90,censored
+34,19,In ICU and weaned off ECMO
+34,34,Alive and out of ICU
+34,90,censored
+35,34,In ICU and weaned off ECMO
+35,55,Alive and out of ICU
+35,90,censored
+36,59,In ICU and weaned off ECMO
+36,76,Alive and out of ICU
+36,90,censored
+37,47,Died
+38,10,In ICU and weaned off ECMO
+38,35,Alive and out of ICU
+38,90,censored
+39,4,Died
+40,17,In ICU and weaned off ECMO
+40,39,Alive and out of ICU
+40,90,censored
+41,14,In ICU and weaned off ECMO
+41,41,Alive and out of ICU
+41,90,censored
+42,12,In ICU and weaned off ECMO
+42,23,Alive and out of ICU
+42,90,censored
+43,17,In ICU and weaned off ECMO
+43,27,Alive and out of ICU
+43,90,censored
+44,6,In ICU and weaned off ECMO
+44,50,Alive and out of ICU
+44,79,censored
+45,56,Died
+46,11,Died
+47,35,Died
+48,1,Died
+49,16,In ICU and weaned off ECMO
+49,42,Alive and out of ICU
+49,90,censored
+50,16,In ICU and weaned off ECMO
+50,36,Alive and out of ICU
+50,90,censored
+51,10,Died
+52,1,In ICU and weaned off ECMO
+52,15,Alive and out of ICU
+52,77,censored
+53,12,In ICU and weaned off ECMO
+53,90,censored
+54,23,Died
+55,42,In ICU and weaned off ECMO
+55,51,Died
+56,22,In ICU and weaned off ECMO
+56,33,Alive and out of ICU
+56,90,censored
+57,88,Died
+58,25,In ICU and weaned off ECMO
+58,40,Alive and out of ICU
+58,90,censored
+59,13,In ICU and weaned off ECMO
+59,23,Alive and out of ICU
+59,90,censored
+60,27,In ICU and weaned off ECMO
+60,55,Alive and out of ICU
+60,90,censored
+61,2,In ICU and weaned off ECMO
+61,17,Alive and out of ICU
+61,90,censored
+62,44,In ICU and weaned off ECMO
+62,55,Died
+63,6,Died
+64,4,In ICU and weaned off ECMO
+64,14,Alive and out of ICU
+64,90,censored
+65,26,Died
+66,81,Died
+67,76,Died
+68,17,Died
+69,38,Died
+70,44,Died
+71,14,In ICU and weaned off ECMO
+71,40,Alive and out of ICU
+71,90,censored
+72,46,In ICU and weaned off ECMO
+72,61,Died
+73,8,Died
+74,12,In ICU and weaned off ECMO
+74,48,Alive and out of ICU
+74,90,censored
+75,2,Died
+76,32,Died
+77,15,In ICU and weaned off ECMO
+77,40,Alive and out of ICU
+77,90,censored
+78,7,Died
+79,68,In ICU and weaned off ECMO
+79,80,Alive and out of ICU
+79,90,censored
+80,13,Died
+81,55,In ICU and weaned off ECMO
+81,84,censored
+82,19,Died
+83,42,In ICU and weaned off ECMO
+83,75,Alive and out of ICU
+83,90,censored
