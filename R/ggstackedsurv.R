@@ -10,7 +10,7 @@
 #' @param base_state A single string giving the name of the initial
 #'   (no event yet) state. Defaults to `"Censored"`.
 #'
-#' @return A ggplot object.
+#' @returns A ggplot object.
 #' @seealso [add_risktable()]
 #' @examples
 #' if (require("survival")) {
@@ -40,9 +40,15 @@ ggstackedsurv <- function(
   probs_long <- data.frame(x = tidy$time, y = tidy$prob, state = tidy$state)
 
   # Step each state separately so the curves hold until the next time.
-  probs_step <- ggplot2:::dapply(probs_long, "state", ggplot2:::stairstep)
+  probs_step <- do.call(
+    rbind,
+    lapply(split(probs_long, probs_long$state), .step_hv)
+  )
 
-  p <- ggplot2::ggplot(probs_step, ggplot2::aes(x = x, y = y, fill = state)) +
+  p <- ggplot2::ggplot(
+    probs_step,
+    ggplot2::aes(x = .data$x, y = .data$y, fill = .data$state)
+  ) +
     ggplot2::geom_area(color = "black", linewidth = 0.3) +
     ggplot2::labs(x = "time", y = "Probability") +
     ggplot2::coord_cartesian(xlim = range(time), expand = FALSE) +
@@ -56,4 +62,17 @@ ggstackedsurv <- function(
   )
   class(p) <- c("ggstackedsurv", class(p))
   p
+}
+
+# Horizontal-then-vertical steps for one state: each value holds until the next
+# time. Returns the same columns as the input, x, y and state.
+#' @noRd
+.step_hv <- function(d) {
+  d <- d[order(d$x), ]
+  n <- nrow(d)
+  data.frame(
+    x = c(d$x[1], rep(d$x[-1], each = 2)),
+    y = rep(d$y, each = 2)[-(2 * n)],
+    state = d$state[1]
+  )
 }
