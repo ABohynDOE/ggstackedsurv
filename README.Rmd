@@ -1,0 +1,64 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ggstackedsurv
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The `ggstackedsurv` package makes the generation of stacked survival probability plots with [`ggplot2`](https://ggplot2.tidyverse.org/) easier.
+It draws heavily from the syntax and the style of [`ggsurvfit`](https://www.danieldsjoberg.com/ggsurvfit/).
+
+## Why ggstackedsurv ?
+
+Originally, the plan was to add these functions as a functionality to the [`ggsurvfit`](https://www.danieldsjoberg.com/ggsurvfit/) package.
+However, stacked survival probabity plots are uncommon and out of the scope of [`ggsurvfit`](https://www.danieldsjoberg.com/ggsurvfit/), so making it a separate package seemed the right choice.
+
+Plotting stacked survival probabilities is already possible with the [`plot.trans()`](https://search.r-project.org/CRAN/refmans/mstate/html/probtrans.html) function from the `mstate` package.
+However, two **crucical** (imho) functionalities were lacking:
+
+- rendering the plot with [`ggplot2`](https://ggplot2.tidyverse.org/), which allows for limitless and easy customization, and easy exporting,
+- working with models from the [`survival`](https://cran.r-project.org/web/packages/survival/index.html) package, since it is the one mostly used for survival models (even mutlistate ones).
+
+## Instalation
+
+You can `ggstackedsurv` from CRAN with:
+
+``` r
+install.packages("ggstackedsurv")
+```
+
+You can install the development version of ggstackedsurv from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("ABohynDOE/ggstackedsurv")
+```
+
+## Examples
+
+The package is quite simple and only produces one type of figure, as shown in the code below
+
+```{r, fig.width=6, fig.height=4, fig.align='center', echo=TRUE}
+library(ggstackedsurv)
+library(survival)
+
+# Create a multi-state model using the ecmo example data
+fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
+
+# Plot the survival probabilities of each state over time
+ggstackedsurv(fit, base_state = "on ECMO") +
+  add_risktable()
+```
