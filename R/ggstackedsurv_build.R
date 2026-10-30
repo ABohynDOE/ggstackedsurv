@@ -15,7 +15,8 @@
 #'   `combine_plots = FALSE`.
 #' @seealso [add_risktable()]
 #' @examplesIf requireNamespace("survival", quietly = TRUE)
-#' fit <- survival::survfit(survival::Surv(time, status) ~ 1, data = ecmo)
+#' library(survival)
+#' fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
 #' p <- ggstackedsurv(fit) + add_risktable()
 #' parts <- ggstackedsurv_build(p, combine_plots = FALSE)
 #' names(parts)
@@ -90,5 +91,8 @@ print.ggstackedsurv <- function(x, ...) {
 # ggsave() draws plots with grid::grid.draw(), which would skip the table.
 #' @exportS3Method grid::grid.draw
 grid.draw.ggstackedsurv <- function(x, recording = TRUE) {
-  grid::grid.draw(ggstackedsurv_build(x, combine_plots = TRUE), recording = recording)
+  grid::grid.draw(
+    ggstackedsurv_build(x, combine_plots = TRUE),
+    recording = recording
+  )
 }

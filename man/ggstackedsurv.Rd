@@ -28,12 +28,13 @@ Draws the state occupancy probabilities from a multi-state \code{survfit} object
 as a stacked step-area plot. Add a risk table with \code{\link[=add_risktable]{add_risktable()}}.
 }
 \examples{
-if (require("survival")) {
- # Fit a multi-state model with the "ecmo" dataset
- fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
- # Generate a stacked probability plot
- ggstackedsurv(fit, base_state = "On ECMO")
-}
+\dontshow{if (requireNamespace("survival", quietly = TRUE)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+library(survival)
+# Fit a multi-state model with the "ecmo" dataset
+fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
+# Generate a stacked probability plot
+ggstackedsurv(fit, base_state = "On ECMO")
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 \code{\link[=add_risktable]{add_risktable()}}

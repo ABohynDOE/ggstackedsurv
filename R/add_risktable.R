@@ -4,12 +4,6 @@
 #' the number at risk, the number of events and the number of censored
 #' observations.
 #'
-#' `add_risktable()` does not draw anything by itself. It stores its settings
-#' on the plot, and the table is built when the plot is printed or saved (see
-#' [ggstackedsurv_build()]). The table is a separate ggplot sharing the x
-#' scale of the main plot, stacked underneath with patchwork, so it stays
-#' aligned whatever you change on the main plot.
-#'
 #' @section What the statistics mean:
 #' The statistics describe the subjects who have not yet left the initial
 #' state of the multi-state model, i.e. the `base_state` of
@@ -33,7 +27,7 @@
 #' @param risktable_stats Character vector of statistics to show, one row per
 #'   element. Elements of `c("n.risk", "n.event", "cum.event", "n.censor",
 #'   "cum.censor")` or glue strings combining them. Default is
-#'   `c("n.risk", "cum.event")`.
+#'   `c("n.risk", "cum.event")`. See the "What the statistics mean" section for details.
 #' @param stats_label Named vector or list of custom row labels. The names are
 #'   the elements of `risktable_stats` and the values the labels. An unnamed
 #'   vector of the same length as `risktable_stats` is used in order.
@@ -47,19 +41,18 @@
 #' @return An object that can be added to a [ggstackedsurv()] plot with `+`.
 #' @seealso [ggstackedsurv()], [ggstackedsurv_build()]
 #' @examplesIf requireNamespace("survival", quietly = TRUE)
-#' fit <- survival::survfit(
-#'   survival::Surv(time, status) ~ 1,
-#'   data = ecmo
-#' )
+#' library(survival)
+#'
+#' fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
 #' p <- ggstackedsurv(fit)
 #'
 #' p + add_risktable()
 #'
-#' p + add_risktable(risktable_stats = "{n.risk} ({cum.event})")
+#' p + add_risktable(times = c(10, 20, 40, 60))
 #'
 #' p + add_risktable(
-#'   risktable_stats = c("n.risk", "cum.event"),
-#'   stats_label = c(n.risk = "Number at risk", cum.event = "Events so far")
+#'   risktable_stats = c("n.risk"),
+#'   stats_label = c(n.risk = "Number at risk")
 #' )
 #' @export
 add_risktable <- function(
@@ -72,7 +65,9 @@ add_risktable <- function(
   ...
 ) {
   if (!is.null(times) && (!is.numeric(times) || anyNA(times))) {
-    cli::cli_abort("{.arg times} must be a numeric vector without missing values.")
+    cli::cli_abort(
+      "{.arg times} must be a numeric vector without missing values."
+    )
   }
   if (!is.character(risktable_stats) || length(risktable_stats) == 0) {
     cli::cli_abort("{.arg risktable_stats} must be a character vector.")
@@ -134,7 +129,13 @@ ggplot_add.ggstackedsurv_add_risktable <- function(object, plot, object_name) {
 
 # Wrap the known statistics in braces so that plain names work with glue.
 .convert_to_glue <- function(x) {
-  possible_stats <- c("n.risk", "n.event", "n.censor", "cum.event", "cum.censor")
+  possible_stats <- c(
+    "n.risk",
+    "n.event",
+    "n.censor",
+    "cum.event",
+    "cum.censor"
+  )
   x[x %in% possible_stats] <- paste0("{", x[x %in% possible_stats], "}")
   x
 }

@@ -22,7 +22,7 @@ for that.}
 
 \item{risktable_stats}{Character vector of statistics to show, one row per
 element. Elements of \code{c("n.risk", "n.event", "cum.event", "n.censor", "cum.censor")} or glue strings combining them. Default is
-\code{c("n.risk", "cum.event")}.}
+\code{c("n.risk", "cum.event")}. See the "What the statistics mean" section for details.}
 
 \item{stats_label}{Named vector or list of custom row labels. The names are
 the elements of \code{risktable_stats} and the values the labels. An unnamed
@@ -44,13 +44,6 @@ An object that can be added to a \code{\link[=ggstackedsurv]{ggstackedsurv()}} p
 Add a risk table below a \code{\link[=ggstackedsurv]{ggstackedsurv()}} plot showing, at chosen times,
 the number at risk, the number of events and the number of censored
 observations.
-}
-\details{
-\code{add_risktable()} does not draw anything by itself. It stores its settings
-on the plot, and the table is built when the plot is printed or saved (see
-\code{\link[=ggstackedsurv_build]{ggstackedsurv_build()}}). The table is a separate ggplot sharing the x
-scale of the main plot, stacked underneath with patchwork, so it stays
-aligned whatever you change on the main plot.
 }
 \section{What the statistics mean}{
 
@@ -76,19 +69,18 @@ number of events in the same row.
 
 \examples{
 \dontshow{if (requireNamespace("survival", quietly = TRUE)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-fit <- survival::survfit(
-  survival::Surv(time, status) ~ 1,
-  data = ecmo
-)
+library(survival)
+
+fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
 p <- ggstackedsurv(fit)
 
 p + add_risktable()
 
-p + add_risktable(risktable_stats = "{n.risk} ({cum.event})")
+p + add_risktable(times = c(10, 20, 40, 60))
 
 p + add_risktable(
-  risktable_stats = c("n.risk", "cum.event"),
-  stats_label = c(n.risk = "Number at risk", cum.event = "Events so far")
+  risktable_stats = c("n.risk"),
+  stats_label = c(n.risk = "Number at risk")
 )
 \dontshow{\}) # examplesIf}
 }

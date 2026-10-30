@@ -3,12 +3,12 @@
 \docType{package}
 \name{ggstackedsurv-package}
 \alias{ggstackedsurv-package}
-\title{ggstackedsurv: Stacked Probability Plots for Mutli-State Survival Models}
+\title{ggstackedsurv: Stacked Probability Plots for Multi-State Survival Models}
 \description{
-Facilitate the creation of stacked probabity plots for multi-state survival models with `ggplot2`. Each function from the package creates a proper `ggplot2` object that can be modified with any function from the `ggplot2` or any of its extensions.
+Facilitate the creation of stacked probability plots for multi-state survival models with `ggplot2`. Each function from the package creates a proper `ggplot2` object that can be modified with any function from the `ggplot2` or any of its extensions.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com}
+\strong{Maintainer}: Alexandre Bohyn \email{alexandre.bohyn@gmail.com} [copyright holder]
 
 }
 \keyword{internal}

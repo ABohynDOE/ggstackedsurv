@@ -12,13 +12,12 @@
 #'
 #' @returns A ggplot object.
 #' @seealso [add_risktable()]
-#' @examples
-#' if (require("survival")) {
-#'  # Fit a multi-state model with the "ecmo" dataset
-#'  fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
-#'  # Generate a stacked probability plot
-#'  ggstackedsurv(fit, base_state = "On ECMO")
-#' }
+#' @examplesIf requireNamespace("survival", quietly = TRUE)
+#' library(survival)
+#' # Fit a multi-state model with the "ecmo" dataset
+#' fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
+#' # Generate a stacked probability plot
+#' ggstackedsurv(fit, base_state = "On ECMO")
 #' @export
 ggstackedsurv <- function(
   x,

@@ -26,7 +26,8 @@ pieces and arrange them yourself.
 }
 \examples{
 \dontshow{if (requireNamespace("survival", quietly = TRUE)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-fit <- survival::survfit(survival::Surv(time, status) ~ 1, data = ecmo)
+library(survival)
+fit <- survfit(Surv(time, status) ~ 1, data = ecmo)
 p <- ggstackedsurv(fit) + add_risktable()
 parts <- ggstackedsurv_build(p, combine_plots = FALSE)
 names(parts)
