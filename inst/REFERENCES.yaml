@@ -1,0 +1,55 @@
+references:
+- id: schmidt2020
+  type: article-journal
+  author:
+  - family: Schmidt
+    given: Matthieu
+  - family: Hajage
+    given: David
+  - family: Lebreton
+    given: Guillaume
+  - family: Monsel
+    given: Antoine
+  - family: Voiriot
+    given: Guillaume
+  - family: Levy
+    given: David
+  - family: Baron
+    given: Elodie
+  - family: Beurton
+    given: Alexandra
+  - family: Chommeloux
+    given: Juliette
+  - family: Meng
+    given: Paris
+  - family: Nemlaghi
+    given: Safaa
+  - family: Bay
+    given: Pierre
+  - family: Leprince
+    given: Pascal
+  - family: Demoule
+    given: Alexandre
+  - family: Guidet
+    given: Bertrand
+  - family: Constantin
+    given: Jean Michel
+  - family: Fartoukh
+    given: Muriel
+  - family: Dres
+    given: Martin
+  - family: Combes
+    given: Alain
+  title: 'Extracorporeal membrane oxygenation for severe acute respiratory distress syndrome associated with COVID-19: a retrospective cohort study'
+  container-title: The Lancet Respiratory Medicine
+  container-title-short: Lancet Respir Med
+  volume: 8
+  issue: 11
+  page: 1121-1131
+  issued:
+    year: 2020
+    month: 11
+  DOI: 10.1016/S2213-2600(20)30328-3
+  PMID: '32798468'
+  PMCID: PMC7426089
+  URL: https://pubmed.ncbi.nlm.nih.gov/32798468/
