@@ -22,9 +22,6 @@
 #'   associated with COVID-19: a retrospective cohort study. The Lancet
 #'   Respiratory Medicine, 8(11), 1121-1131.
 #'
-#' @seealso The raw CSV and the processing script are in
-#'   `data-raw/ecmo_patients_wide.csv` and `data-raw/ecmo.R`.
-#'
 #' @examples
 #' head(ecmo)
 #' table(ecmo$status)

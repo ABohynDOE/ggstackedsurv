@@ -36,8 +36,4 @@ status.
 head(ecmo)
 table(ecmo$status)
 }
-\seealso{
-The raw CSV and the processing script are in
-\code{data-raw/ecmo_patients_wide.csv} and \code{data-raw/ecmo.R}.
-}
 \keyword{datasets}
