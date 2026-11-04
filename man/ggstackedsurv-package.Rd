@@ -7,6 +7,14 @@
 \description{
 Facilitate the creation of stacked probability plots for multi-state survival models with `ggplot2`. Each function from the package creates a proper `ggplot2` object that can be modified with any function from the `ggplot2` or any of its extensions.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/ABohynDOE/ggstackedsurv}
+  \item Report bugs at \url{https://github.com/ABohynDOE/ggstackedsurv/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Alexandre Bohyn \email{alexandre.bohyn@gmail.com} [copyright holder]
 

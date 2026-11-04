@@ -21,11 +21,11 @@ being in each state at a given time always sum to 1, making for a nice
 and compact visualization.
 
 A good example can be found in this 2020
-[paper](https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(20)30328-3/fulltext)
-about extra-corporeal membrane oxygenation (ECMO) in COVID-19 patients
+[paper](https://doi.org/10.1016/S2213-2600(20)30328-3) about
+extra-corporeal membrane oxygenation (ECMO) in COVID-19 patients
 (Schmidt et al. 2020)
 
-<img src="images/paste-1.png" style="width:15cm" />
+<img src="man/figures/example_curve.png" style="width:15cm" />
 
 ## Why ggstackedsurv ?
 
@@ -43,9 +43,9 @@ functionalities were lacking:
 - rendering the plot with [`ggplot2`](https://ggplot2.tidyverse.org/),
   which allows for limitless and easy customization, and easy exporting,
 - working with models from the
-  [`survival`](https://cran.r-project.org/web/packages/survival/index.html)
-  package, since it is the one mostly used for survival models (even
-  mutlistate ones).
+  [`survival`](https://CRAN.R-project.org/package=survival) package,
+  since it is the one mostly used for survival models (even mutlistate
+  ones).
 
 ## Installation
 

@@ -26,9 +26,9 @@ The `ggstackedsurv` package makes the generation of stacked survival probability
 
 Stacked probability plots are an efficient way to visualize the probabilities of being in each state of a multi-state model over time. Since all patients have to be in one of the states, the probabilities of being in each state at a given time always sum to 1, making for a nice and compact visualization.
 
-A good example can be found in this 2020 [paper](https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(20)30328-3/fulltext) about extra-corporeal membrane oxygenation (ECMO) in COVID-19 patients [@schmidt2020]
+A good example can be found in this 2020 [paper](https://doi.org/10.1016/S2213-2600(20)30328-3) about extra-corporeal membrane oxygenation (ECMO) in COVID-19 patients [@schmidt2020]
 
-![](images/paste-1.png){width="15cm"}
+![](man/figures/example_curve.png){width="15cm"}
 
 ## Why ggstackedsurv ?
 
@@ -37,7 +37,7 @@ Originally, the plan was to add these functions as a functionality to the [`ggsu
 Plotting stacked probabilities is already possible with the [`plot.trans()`](https://search.r-project.org/CRAN/refmans/mstate/html/probtrans.html) function from the `mstate` package. However, two **crucial** (imho) functionalities were lacking:
 
 - rendering the plot with [`ggplot2`](https://ggplot2.tidyverse.org/), which allows for limitless and easy customization, and easy exporting,
-- working with models from the [`survival`](https://cran.r-project.org/web/packages/survival/index.html) package, since it is the one mostly used for survival models (even mutlistate ones).
+- working with models from the [`survival`](https://CRAN.R-project.org/package=survival) package, since it is the one mostly used for survival models (even mutlistate ones).
 
 ## Installation
 
